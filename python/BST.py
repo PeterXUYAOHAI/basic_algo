@@ -119,6 +119,8 @@ class BST:
             return self.postorder_recursion(self.root)
         if method == 2:
             return self.postorder_interative_1(self.root)
+        if method == 3:
+            return self.postorder_interative_2(self.root)
 
 
     def postorder_recursion(self,root):
@@ -185,8 +187,24 @@ class BST:
         # reverse the modified preorder
         return sol[::-1]
 
+    #use a flag to indicate if visited
+    def postorder_interative_2(self, root):
+        if not root:
+            return []
+        sol = []
+        stack = [(root,False)]
 
-
+        while stack:
+            node, visited = stack.pop()
+            if visited:
+                sol.append(node.val)
+            else:
+                stack.append((node, True))
+                if node.right:
+                    stack.append((node.right,False))
+                if node.left:
+                    stack.append((node.left,False))
+        return sol
 
 n1 = Node(3)
 n2 = Node(1)
@@ -211,3 +229,4 @@ print b.inorder(1)
 print b.inorder(2)
 print b.postorder(1)
 print b.postorder(2)
+print b.postorder(3)
