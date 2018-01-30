@@ -71,10 +71,12 @@ class BST:
             return 1+ min(self.min_depth_recursion(root.left), self.min_depth_recursion(root.right))
 
 
-
-    def inorder(self):
-        return self.inorder_recursion(self.root)
-
+    # left, mid, right
+    def inorder(self,method):
+        if method == 1:
+            return self.inorder_recursion(self.root)
+        if method == 2:
+            return self.inorder_interative(self.root)
 
     def inorder_recursion(self,root):
         if not root:
@@ -90,9 +92,12 @@ class BST:
         if root.right:
             self.inorder_recursion_helper(root.right,sol)
 
-    def preorder(self):
-        return self.preorder_recursion(self.root)
-
+    #mid, left, right
+    def preorder(self, method):
+        if method == 1:
+            return self.preorder_recursion(self.root)
+        if method == 2:
+            return self.preorder_iterative(self.root)
 
     def preorder_recursion(self,root):
         if not root:
@@ -108,8 +113,12 @@ class BST:
         if root.right:
             self.preorder_recursion_helper(root.right,sol)
 
-    def postorder(self):
-        return self.postorder_recursion(self.root)
+    #left, right, mid
+    def postorder(self, method):
+        if method == 1:
+            return self.postorder_recursion(self.root)
+        if method == 2:
+            return self.postorder_interative_1(self.root)
 
 
     def postorder_recursion(self,root):
@@ -125,6 +134,56 @@ class BST:
         if root.right:
             self.postorder_recursion_helper(root.right,sol)
         sol += [root.val]
+
+
+    def preorder_iterative(self,root):
+        if not root:
+            return []
+        sol = []
+        stack =[root]
+
+        while stack:
+            node = stack.pop()
+            sol.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+        return sol
+
+    def inorder_interative(self,root):
+        if not root:
+            return []
+        sol = []
+        stack = []
+        while root:
+            stack.append(root)
+            root = root.left
+        while stack:
+            node = stack.pop()
+            sol.append(node.val)
+            if node.right:
+                stack.append(node.right)
+
+        return sol
+
+
+
+    def postorder_interative_1(self, root):
+        if not root:
+            return []
+        sol = []
+        stack = [root]
+
+        while stack:
+            node = stack.pop()
+            sol.append(node.val)
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+        # reverse the modified preorder
+        return sol[::-1]
 
 
 
@@ -146,6 +205,9 @@ b.insert(n6)
 print b.level_traversal()
 print b.max_depth()
 print b.min_depth()
-print b.preorder()
-print b.inorder()
-print b.postorder()
+print b.preorder(1)
+print b.preorder(2)
+print b.inorder(1)
+print b.inorder(2)
+print b.postorder(1)
+print b.postorder(2)
