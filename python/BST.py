@@ -71,6 +71,64 @@ class BST:
             return 1+ min(self.min_depth_recursion(root.left), self.min_depth_recursion(root.right))
 
 
+
+    def inorder(self):
+        return self.inorder_recursion(self.root)
+
+
+    def inorder_recursion(self,root):
+        if not root:
+            return []
+        sol = []
+        self.inorder_recursion_helper(root,sol)
+        return sol
+
+    def inorder_recursion_helper(self,root,sol):
+        if root.left:
+            self.inorder_recursion_helper(root.left,sol)
+        sol += [root.val]
+        if root.right:
+            self.inorder_recursion_helper(root.right,sol)
+
+    def preorder(self):
+        return self.preorder_recursion(self.root)
+
+
+    def preorder_recursion(self,root):
+        if not root:
+            return []
+        sol = []
+        self.preorder_recursion_helper(root,sol)
+        return sol
+
+    def preorder_recursion_helper(self,root,sol):
+        sol += [root.val]
+        if root.left:
+            self.preorder_recursion_helper(root.left,sol)
+        if root.right:
+            self.preorder_recursion_helper(root.right,sol)
+
+    def postorder(self):
+        return self.postorder_recursion(self.root)
+
+
+    def postorder_recursion(self,root):
+        if not root:
+            return []
+        sol = []
+        self.postorder_recursion_helper(root,sol)
+        return sol
+
+    def postorder_recursion_helper(self,root,sol):
+        if root.left:
+            self.postorder_recursion_helper(root.left,sol)
+        if root.right:
+            self.postorder_recursion_helper(root.right,sol)
+        sol += [root.val]
+
+
+
+
 n1 = Node(3)
 n2 = Node(1)
 n3 = Node(4)
@@ -88,3 +146,6 @@ b.insert(n6)
 print b.level_traversal()
 print b.max_depth()
 print b.min_depth()
+print b.preorder()
+print b.inorder()
+print b.postorder()
