@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/xuyaohai/PycharmProjects/basic_algo/cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/xuyaohai/PycharmProjects/basic_algo/cpp/cmake-build-debug

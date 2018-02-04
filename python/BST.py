@@ -206,6 +206,10 @@ class BST:
                     stack.append((node.left,False))
         return sol
 
+
+# def lowest common ancester
+#def suffix tree
+#def reconstruct tree from traversal
 n1 = Node(3)
 n2 = Node(1)
 n3 = Node(4)

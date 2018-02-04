@@ -24,6 +24,8 @@ class Stack:
             return min(self.container)
 
 
+
+
 s = Stack()
 
 print s.empty()

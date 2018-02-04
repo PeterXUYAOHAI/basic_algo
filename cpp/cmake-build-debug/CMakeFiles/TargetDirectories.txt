@@ -1,0 +1,5 @@
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/cmake-build-debug/CMakeFiles/quicksort_2.dir
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/cmake-build-debug/CMakeFiles/quicksort.dir
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/cmake-build-debug/CMakeFiles/cpp.dir

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/BST.cpp
+iostream
+-
+vector
+-
+
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/include/Stack_dynamic.h
+cstdio
+-
+../src/Stack_dynamic.cpp
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/src/Stack_dynamic.cpp
+
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/include/Stack_static.h
+cstdio
+-
+../src/Stack_static.cpp
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/src/Stack_static.cpp
+
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/main.cpp
+
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/src/Stack_dynamic.cpp
+../include/Stack_dynamic.h
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/include/Stack_dynamic.h
+
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/src/Stack_static.cpp
+../include/Stack_static.h
+/Users/xuyaohai/PycharmProjects/basic_algo/cpp/include/Stack_static.h
+
